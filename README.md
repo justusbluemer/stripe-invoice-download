@@ -1,7 +1,7 @@
 # Stripe Invoice Exporter
 
 A simple, efficient tool to bulk download Stripe invoices as PDF files.  
-Built with TypeScript and Bun, this script allows you to easily export all your Stripe invoices from a specified date.
+Built with TypeScript and Deno, this script allows you to easily export all your Stripe invoices from a specified date.
 
 ## 🌟 Features
 
@@ -10,7 +10,7 @@ Built with TypeScript and Bun, this script allows you to easily export all your 
 - Automatic creation of output directory
 - Environment variable support for easy configuration
 - Built with TypeScript for type safety
-- Uses Bun for fast execution and file operations
+- Uses Deno for fast execution and file operations
 
 ## 🚀 Quick Start
 
@@ -28,13 +28,12 @@ Built with TypeScript and Bun, this script allows you to easily export all your 
 
 3. Run the script:
    ```
-   bun run main.ts
+   deno task start
    ```
 
 ## 🛠️ Configuration
 
 You can configure the script by modifying the following variables in the `main.ts` file:
-
 ```typescript
 const startDate = new Date('2024-10-03').getTime() / 1000; // Convert to Unix timestamp
 const params: Stripe.InvoiceListParams = {
@@ -74,7 +73,7 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 ## 🙏 Acknowledgements
 
 - [Stripe](https://stripe.com) for their excellent API
-- [Bun](https://bun.sh) for the fast runtime and file operations
+- [Deno](https://deno.com) for the fast runtime and file operations
 
 ---
 

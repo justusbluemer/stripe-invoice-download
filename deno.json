@@ -1,5 +1,5 @@
 {
 	"tasks": {
-	  "start": "deno run --allow-net --env-file .env main.ts",
+	  "start": "deno run --allow-net --env main.ts",
 	}
   }

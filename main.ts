@@ -1,7 +1,6 @@
-import { Stripe } from "stripe";
-import { write } from "bun";
+import { Stripe } from "npm:stripe";
 import { mkdir } from "node:fs/promises";
-import { join } from "path";
+import { join } from "jsr:@std/path";
 
 // Configuration
 const STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY");
@@ -45,7 +44,7 @@ async function downloadInvoices() {
 				const fileName = `invoice_${invoice.number}.pdf`;
 				const filePath = join(OUTPUT_DIRECTORY, fileName);
 
-				await write(filePath, pdfBuffer);
+				await Deno.writeFile(filePath, new Uint8Array(pdfBuffer));
 				console.log(`Downloaded: ${fileName}`);
 			}
 		}
